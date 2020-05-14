@@ -1,24 +1,7 @@
-# video-browser
+# Read Me
+## Setup
+- get youtube v3 apis
+- create .env file in root and put the API Key there with name "VUE_APP_API_KEY=<youtube api key>". Note, all variables have to start with "VUE_APP_"
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Gotchas
+- Somehow cannot use "debugger;", instead use "debugger // eslint-disable-line" to debug
