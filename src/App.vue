@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SearchBar></SearchBar>
+    <SearchBar v-on:termChange="onTermChange"></SearchBar>
   </div>
 </template>
 
@@ -11,6 +11,14 @@
     name: 'App',
     components: {
       SearchBar
+    },
+    methods: {
+      // onTermChange() {} //ES6 way
+      onTermChange: function(searchTerm) {
+        console.log(searchTerm);
+      }
     }
   };
 </script>
+
+
