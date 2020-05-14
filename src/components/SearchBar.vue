@@ -9,8 +9,8 @@
     name: 'SearchBar',
     methods: {
       onInput: function(event) {
-        console.log(event.target.value);
-        // event.target.value = "";
+        this.$emit('termChange', event.target.value);
+        // this means send the value using the termChange function to App Vue
       }
     }
   };
