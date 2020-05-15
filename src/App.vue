@@ -1,8 +1,7 @@
 <template>
   <div>
     <SearchBar v-on:termChange="onTermChange"></SearchBar>
-    <VideoList></VideoList>
-    <p>{{ videos.length }} videos</p>
+    <VideoList v-bind:videos="videos"></VideoList>
   </div>
 </template>
 
