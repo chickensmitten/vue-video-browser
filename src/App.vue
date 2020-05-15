@@ -2,6 +2,7 @@
   <div>
     <SearchBar v-on:termChange="onTermChange"></SearchBar>
     <VideoList></VideoList>
+    <p>{{ videos.length }} videos</p>
   </div>
 </template>
 
@@ -12,6 +13,12 @@
 
   export default {
     name: 'App',
+    // option one: data: function() {
+    data() {      
+      return {
+        videos: []  
+      };
+    },
     components: {
       SearchBar,
       VideoList
@@ -26,7 +33,9 @@
             part: 'snippet',
             q: searchTerm
           }
-        }).then(response => console.log(response));
+        }).then(response => {
+          this.videos = response.data.items;
+        });
       }
     }
   };
