@@ -38,7 +38,8 @@
           }
         }).then(response => {
           this.videos = response.data.items;
-        });
+          console.log(response);
+        })
       },
       onVideoSelect(video) {
         return this.selectedVideo = video;
