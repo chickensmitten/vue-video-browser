@@ -3,7 +3,9 @@
     <VideoListItem 
       v-for="video in videos"
       :video="video"
-      :key="video.etag">
+      :key="video.etag"
+      @videoSelect="onVideoSelect"
+    >
       <!-- Anytime we use this v-for directive, we need to add :key property -->
       <!-- key property is used whenever our list is updated. It is used to update our list to perform -->
       <!-- normally we use the id as the key property. in this case, the video has etag property as id -->
@@ -23,6 +25,11 @@
     // }
     components: {
       VideoListItem
+    },
+    methods: {
+      onVideoSelect(video) {
+        this.$emit('videoSelect', video);
+      }
     }
   };
 </script>
