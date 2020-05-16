@@ -1,12 +1,19 @@
 <template>
   <ul>
-    <VideoListItem v-for="video in videos">
+    <VideoListItem 
+      v-for="video in videos"
+      :video="video"
+      :key="video.etag">
+      <!-- Anytime we use this v-for directive, we need to add :key property -->
+      <!-- key property is used whenever our list is updated. It is used to update our list to perform -->
+      <!-- normally we use the id as the key property. in this case, the video has etag property as id -->
     </VideoListItem>
   </ul>  
 </template>
 
 <script>
   import VideoListItem from './VideoListItem';
+
   export default {
     name: 'VideoList',
     props: ['videos'],
